@@ -12,7 +12,7 @@ export class User {
 })
 
 export class AppComponent {
-  title = 'ADP Intelligent Queue System';
+  title = 'Store Managment System';
   otherFactors= 'Lets Check Again !!!!';
   user:User = new User();
 

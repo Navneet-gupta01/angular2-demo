@@ -1,12 +1,18 @@
-<section>Great this is For Admin Component Page.
+<section class="">
 
-<div class="row">
-  <div class="col s4"> Manage Products</div>
-  <div class="col s4">Manage Catalogues</div>
-  <div class="col s4">Manage Prices</div>
-  <div class="col s4">Manage Tags</div>
-  <div class="col s4">Manage Departments</div>
-  <div class="col s4">Manage Users</div>
-</div>
+  <div class="row">
+    <div class="col s3">
+      <div class="row collection">
+        <a routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="collection-item col s12 p-10">Dashboard</a>
+        <a routerLink="./account" routerLinkActive="active" class="collection-item col s12 p-10">Manage Account Settings</a>
+        <a routerLink="./stores" routerLinkActive="active"class="collection-item col s12 p-10">Manage Stores</a>
+        <a routerLink="./admins" routerLinkActive="active" class="collection-item col s12 p-10">Manage Store Admins</a>
+        <a routerLink="./warehouse" routerLinkActive="active" class="collection-item col s12 p-10">Manage Warehouse</a>
+      </div>
+    </div>
+    <div class="col s9">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 
 </section>

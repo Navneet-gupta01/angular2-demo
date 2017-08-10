@@ -5,9 +5,33 @@ import { NgModule } from '@angular/core';
 import { RouterModule,Routes } from '@angular/router';
 
 import { AdminComponent } from './admin.component';
+import { ManageAccountComponent } from './manage-account.component';
+import { CentralWarehouseComponent } from './central-warehouse.component';
+import { ManageStoreAdminComponent } from './manage-store-admin.component';
+import { ManageStoresComponent } from './manage-stores.component';
+import { StoreDetailsComponent } from './store-details.component';
+import { AdminDetailsComponent } from './admin-details.component';
+
 
 const appRoutes: Routes = [
-  { path: 'admin/home', component: AdminComponent },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    children: [
+      {
+        path: '',
+        children: [
+          {path: 'admin', component: AdminComponent},
+          {path: 'account', component: ManageAccountComponent},
+          {path: 'warehouse', component: CentralWarehouseComponent},
+          {path: 'stores', component: ManageStoresComponent},
+          {path: 'stores/:id', component: StoreDetailsComponent},
+          {path: 'admins', component: ManageStoreAdminComponent},
+          {path: 'admins/:id', component: AdminDetailsComponent},
+        ]
+      }
+    ]
+  }
 ];
 
 @NgModule({

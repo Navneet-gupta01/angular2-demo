@@ -1,0 +1,47 @@
+html {
+  font-size: 14px;
+}
+.p-10 {
+  padding: 10px;
+}
+.p-25 {
+  padding:25px;
+}
+
+.p-lr-50 {
+  padding: 0 50px;
+}
+.p-lr-25 {
+  padding: 0 25px;
+}
+.lt-sp-10 {
+  letter-spacing: 10px;
+}
+.m-0 {
+  margin:0 !important;
+}
+
+.f-big {
+  font-size: 5rem;
+}
+.f-medium {
+  font-size: 3rem;
+}
+.f-small {
+  font-size: 0.8rem;
+}
+.p-l-0 {
+  padding-left:0;
+}
+.br-2-d {
+  border: 2px solid black;
+}
+.br-2-l {
+  border: 2px solid darkgrey;
+}
+.br-d {
+  border: 1px solid black;
+}
+.br-l {
+  border: 1px solid lightgrey;
+}

@@ -24,11 +24,12 @@ export class LoginComponent {
     if (this.user.username === 'Store' && this.user.password === '123456') {
       localStorage.setItem('role', 'store');
       this.router.navigate(['store/home']);
+      this.menuService.addToggleEvent.emit(true);
     } else if (this.user.username === 'Admin' && this.user.password === '123456') {
       localStorage.setItem('role', 'admin');
       this.router.navigate(['admin']);
+      this.menuService.addToggleEvent.emit(true);
     }
-    this.menuService.addToggleEvent.emit(true);
     this.user = new User();
   }
 }

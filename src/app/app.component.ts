@@ -34,8 +34,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.menuService.getEmittedValue().subscribe(
-      showMenu => {
+    this.menuService.addToggleEvent.subscribe(
+      (showMenu) => {
         this.isAuthenticated = showMenu;
       }
    );

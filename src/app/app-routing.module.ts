@@ -2,7 +2,7 @@
  * Created by navneetgupta on 8/8/17.
  */
 import { NgModule } from '@angular/core';
-import { RouterModule,Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { PageNotFoundComponent } from './common/404.component';
 import { UnAuthenticatedComponent } from './common/401.component';

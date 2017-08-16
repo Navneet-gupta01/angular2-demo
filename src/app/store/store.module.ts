@@ -1,12 +1,13 @@
 /**
  * Created by navneetgupta on 8/9/17.
  */
-import { NgModule }       from '@angular/core';
-import { CommonModule }   from '@angular/common';
-import { FormsModule }    from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
-import { StoreComponent }    from './store.component';
+import { AuthGuard } from './store.authguard';
+import { StoreComponent } from './store.component';
 import { StoreRoutingModule } from './store-route.module';
 
 @NgModule({
@@ -14,12 +15,14 @@ import { StoreRoutingModule } from './store-route.module';
     CommonModule,
     FormsModule,
     StoreRoutingModule,
-    HttpClientModule
+    HttpModule
   ],
   declarations: [
     StoreComponent
   ],
-  providers: [ ]
+  providers: [
+   AuthGuard
+  ]
 })
 
 export class StoreModule {}

@@ -2,7 +2,7 @@
  * Created by navneetgupta on 8/9/17.
  */
 import { NgModule } from '@angular/core';
-import { RouterModule,Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AdminComponent } from './admin.component';
 import { ManageAccountComponent } from './manage-account.component';
@@ -11,12 +11,14 @@ import { ManageStoreAdminComponent } from './manage-store-admin.component';
 import { ManageStoresComponent } from './manage-stores.component';
 import { StoreDetailsComponent } from './store-details.component';
 import { AdminDetailsComponent } from './admin-details.component';
+import { AuthGuard } from './admin.authguard';
 
 
 const appRoutes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',

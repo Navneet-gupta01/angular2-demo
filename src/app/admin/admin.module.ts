@@ -1,11 +1,13 @@
 /**
  * Created by navneetgupta on 8/9/17.
  */
-import { NgModule }       from '@angular/core';
-import { CommonModule }   from '@angular/common';
-import { FormsModule }    from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
-import { AdminComponent }    from './admin.component';
+import { AuthGuard } from './admin.authguard';
+import { AdminComponent } from './admin.component';
 import { ManageAccountComponent } from './manage-account.component';
 import { CentralWarehouseComponent } from './central-warehouse.component';
 import { ManageStoreAdminComponent } from './manage-store-admin.component';
@@ -19,7 +21,8 @@ import { AdminRoutingModule } from './admin-route.module';
   imports: [
     CommonModule,
     FormsModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    HttpModule
   ],
   declarations: [
     AdminComponent,
@@ -30,7 +33,9 @@ import { AdminRoutingModule } from './admin-route.module';
     StoreDetailsComponent,
     AdminDetailsComponent
   ],
-  providers: [ ]
+  providers: [
+    AuthGuard
+  ]
 })
 
 export class AdminModule {}

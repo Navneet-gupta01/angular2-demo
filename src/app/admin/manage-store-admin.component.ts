@@ -5,7 +5,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'manage-store-admins',
+  selector: 'app-manage-store-admins',
   templateUrl: './manage-store-admin.component.html',
   styleUrls: ['./app.component.css']
 })

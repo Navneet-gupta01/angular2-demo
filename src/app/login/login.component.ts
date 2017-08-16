@@ -3,20 +3,32 @@
  */
 import { Component } from '@angular/core';
 import { User } from '../app.component';
-import { HttpClient } from '@angular/common/http'
+import { Router } from '@angular/router';
+import { Http } from '@angular/http';
+import { MenuService } from '../common/shared.services';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: []
+  styleUrls: ['./app.component.css']
 })
 export class LoginComponent {
 
-  user:User = new User();
-  constructor(private http: HttpClient) {}
+  user: User = new User();
+  title = '';
+  constructor(public router: Router, public http: Http, public menuService: MenuService) {}
 
   submit(): void {
-    console.log("On Submit parameters to submit are : "  + JSON.stringify(this.user) );
-    //this.http.get('http://localhsot:8080/');
+    console.log('On Submit parameters to submit are : '  + JSON.stringify(this.user) );
+    // this.http.get('http://localhsot:8080/');
+    if (this.user.username === 'Store' && this.user.password === '123456') {
+      localStorage.setItem('role', 'store');
+      this.router.navigate(['store/home']);
+    } else if (this.user.username === 'Admin' && this.user.password === '123456') {
+      localStorage.setItem('role', 'admin');
+      this.router.navigate(['admin']);
+    }
+    this.menuService.addToggleEvent.emit(true);
     this.user = new User();
   }
 }

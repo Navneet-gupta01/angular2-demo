@@ -5,11 +5,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'manage-account',
+  selector: 'app-manage-account',
   templateUrl: './manage-account.component.html',
   styleUrls: ['./app.component.css']
 })
 
-export class ManageAccountComponent{
+export class ManageAccountComponent {
 
 }

@@ -4,6 +4,6 @@
 
 export class Categories {
   id: number;
-  nameEn : String;
+  nameEn: String;
   nameAr: String;
 }

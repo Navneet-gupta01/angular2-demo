@@ -2,14 +2,16 @@
   <div class="nav-wrapper container">
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
-      <li><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
-      <li><a routerLink="/store/home" routerLinkActive="active">Store</a></li>
+      <li><a routerLink="/login" routerLinkActive="active" *ngIf="!isAuthenticated">Login</a></li>
+      <li><a routerLink="/logout" routerLinkActive="active" *ngIf="isAuthenticated" (click)="logout($event)">Logout</a></li>
+      <!-- <li><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
+      <li><a routerLink="/store/home" routerLinkActive="active">Store</a></li> -->
     </ul>
     <ul class="side-nav" id="mobile-demo">
-      <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
-      <li><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
-      <li><a routerLink="/store/home" routerLinkActive="active">Store</a></li>
+      <li><a routerLink="/login" routerLinkActive="active"  *ngIf="!isAuthenticated">Login</a></li>
+      <li><a routerLink="/logout" routerLinkActive="active"  *ngIf="isAuthenticated">Logout</a></li>
+      <!-- <li><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
+      <li><a routerLink="/store/home" routerLinkActive="active">Store</a></li> -->
     </ul>
   </div>
 </nav>

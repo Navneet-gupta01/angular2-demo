@@ -4,7 +4,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'central-warehouse',
+  selector: 'app-central-warehouse',
   templateUrl: './central-warehouse.component.html',
   styleUrls: ['./app.component.css']
 })
